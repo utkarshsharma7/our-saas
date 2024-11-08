@@ -1,12 +1,12 @@
 // import LandingPage from "@/components/landing-page";
+"use client";
+import ProductRegistration from "@/components/productRegistration";
+
 // s
 export default function ListProduct() {
   return (
     <>
-      <div className="flex w-full h-screen justify-center items-center">
-        {" "}
-        list
-      </div>
+      <ProductRegistration />
     </>
   );
 }

@@ -1,5 +1,7 @@
 // components/Sidebar.tsx
 "use client";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 interface SidebarProps {
@@ -13,6 +15,19 @@ const Sidebar: React.FC<SidebarProps> = ({
   toggleSidebar,
   sampleCategories,
 }) => {
+  // const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const isAuthenticated = false;
+  const router = useRouter();
+
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (isAuthenticated) {
+      router.push("/list-product");
+    } else {
+      router.push("/signup");
+    }
+  };
+
   return (
     <div
       className={`${
@@ -43,9 +58,11 @@ const Sidebar: React.FC<SidebarProps> = ({
           </svg>
         </button>
       </div>
-      <button className="text-md md:text-xl font-semibold bg-purple-400 p-2 rounded-lg text-gray-800 mb-4">
-        List my Product
-      </button>
+      <Link href="#" onClick={handleClick}>
+        <button className="text-md md:text-xl font-semibold bg-purple-400 p-2 rounded-lg text-gray-800 mb-4">
+          List my Product
+        </button>
+      </Link>
       <div className="space-y-4">
         <div className="text-gray-600 hover:text-gray-900 cursor-pointer">
           My Orders
