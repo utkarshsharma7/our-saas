@@ -1,11 +1,11 @@
-import { CardWithForm } from "@/components/VendorForm";
-
-export default function Vendor() {
+// import LandingPage from "@/components/landing-page";
+// s
+export default function ListProduct() {
   return (
     <>
       <div className="flex w-full h-screen justify-center items-center">
         {" "}
-        <CardWithForm />
+        list
       </div>
     </>
   );
