@@ -1,15 +1,14 @@
 // pages/LandingPage.tsx
 "use client";
-import React, { useState } from "react";
-import Sidebar from "@/components/sidebar";
+import React from "react";
 import MainContent from "@/components/Main";
 
 const LandingPage: React.FC = () => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  // const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  const toggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen);
-  };
+  // const toggleSidebar = () => {
+  //   setSidebarOpen(!sidebarOpen);
+  // };
 
   const sampleProducts = [
     {
@@ -94,45 +93,16 @@ const LandingPage: React.FC = () => {
     },
   ];
 
-  const sampleCategories = [
-    "Electronics",
-    "Clothing",
-    "Books",
-    "Home Decor",
-    "Sports",
-  ];
+  // const sampleCategories = [
+  //   "Electronics",
+  //   "Clothing",
+  //   "Books",
+  //   "Home Decor",
+  //   "Sports",
+  // ];
 
   return (
     <div className="flex flex-col md:flex-row h-screen overflow-hidden">
-      {/* Hamburger Button for Mobile */}
-      <button
-        className="md:hidden p-4 focus:outline-none"
-        onClick={toggleSidebar}
-      >
-        <svg
-          className="w-6 h-6 text-gray-800"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M4 6h16M4 12h16M4 18h16"
-          ></path>
-        </svg>
-      </button>
-
-      {/* Sidebar */}
-      <Sidebar
-        sidebarOpen={sidebarOpen}
-        toggleSidebar={toggleSidebar}
-        sampleCategories={sampleCategories}
-      />
-
-      {/* Main Content */}
       <MainContent sampleProducts={sampleProducts} />
     </div>
   );
